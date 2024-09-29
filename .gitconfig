@@ -1,0 +1,12 @@
+[user] # User info
+	name = Serhat Başesgioğlu
+	email = 55340640+SerhatBasesgioglu@users.noreply.github.com
+
+[alias] # Shortcuts for commands
+	co = checkout
+	cm = commit -m
+	st = status
+
+[core] # Default code editor for commits
+	editor = nvim
+
