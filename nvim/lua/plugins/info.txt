@@ -1,0 +1,28 @@
+##Navigation
+neo-tree = Adds file explorer 
+telescope = Adds search functionality
+
+
+## Ui-Appearance
+toktonight = Colorscheme
+
+
+treesitter = Adds better syntax highlighting and useful for many plugins(i guess?)
+mason = Plugin for installing lsp,linter,formatter and daps
+nvim-cmp = Plugin for autocomplete
+lspconfig = Sets up lsp servers, manages keymaps for diagnostics etc
+lualine = adds information line underneath
+which-key = shows keymappings
+indent-blankline = adds indentation guidelines:w
+auto-session = adds option to reload previous session
+vim-maximizer = maximize current window
+bufferline = makes a good tabline (look into this)
+autopairs = creates pair for characters ([{ etc.
+autotag = create tag pair automatically
+conform = formatter
+nvim-lint = linter
+todo-comments = adds cool todo comments (there is more, look into this)
+comment = increase comment functionality (look to this)
+gitsigns = adds git commands
+lazygit = gitrelated again, look
+nvim-ufo = adds better folding

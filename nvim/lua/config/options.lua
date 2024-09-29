@@ -54,3 +54,17 @@ vim.opt.swapfile = false
 
 -- Keeps cursor in the middle of screen (10 means at least 10 lines away from the borders)
 vim.opt.scrolloff = 999
+
+
+
+-- Other settings that i've copied, look their functionalities
+-- opm.autoindent = true
+-- opt.smartindent = true
+-- opt.breakindent = true
+-- opt.signcolumn = "yes"
+-- opt.updatetime = 250
+-- opt.timeoutlen = 300
+-- opt.list = true
+-- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- opt.inccommand = "split"
+-- opt.background = "dark"
