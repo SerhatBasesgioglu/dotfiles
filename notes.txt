@@ -1,0 +1,15 @@
+This configs has not been added to repo
+
+wezterm
+not using it yet, instead setup windows terminal
+
+oh-my-posh(installed on wsl)
+tokyonight theme
+
+windows terminal 
+tokyonight theme
+nerd font
+95 opacity
+
+tmux
+add cloned tpm repo, there is info about this at github page
