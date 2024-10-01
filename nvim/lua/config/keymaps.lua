@@ -14,10 +14,10 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 --vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 --vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<A-h>", "<cmd>vertical resize -2<CR>", { desc = "Move split to left" })
-vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<CR>", { desc = "Move split to left" })
-vim.keymap.set("n", "<A-j>", "<cmd>resize +2<CR>", { desc = "Move split to left" })
-vim.keymap.set("n", "<A-k>", "<cmd>resize -2<CR>", { desc = "Move split to left" })
+--vim.keymap.set("n", "<A-h>", "<cmd>vertical resize -2<CR>", { desc = "Move split to left" })
+--vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<CR>", { desc = "Move split to left" })
+--vim.keymap.set("n", "<A-j>", "<cmd>resize +2<CR>", { desc = "Move split to left" })
+--vim.keymap.set("n", "<A-k>", "<cmd>resize -2<CR>", { desc = "Move split to left" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
