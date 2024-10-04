@@ -11,8 +11,10 @@ return {
 			typescriptreact = { "eslint_d" },
 			python = { "pylint" },
 			html = { "htmlhint" },
+			lua = { "selene" },
 		}
 
+		local lint_enabled = true
 		local function toggle_linter_diagnostics()
 			local ft = vim.bo.filetype
 			local linters = lint.linters_by_ft[ft]
@@ -34,7 +36,7 @@ return {
 		vim.keymap.set("n", "<leader>ll", function()
 			toggle_linter_diagnostics()
 		end, { desc = "Toggle linter diagnostics" })
-		vim.api.nvim_create_autocmd("BufWritePost", {
+		vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
 			callback = function()
 				if lint_enabled then
 					lint.try_lint() -- Only run lint if diagnostics are toggled on

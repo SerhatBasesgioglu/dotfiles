@@ -40,6 +40,7 @@ return {
 					"pylint",
 					"eslint_d",
 					"htmlhint",
+					"selene",
 				},
 			})
 		end,
