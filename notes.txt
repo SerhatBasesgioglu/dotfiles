@@ -1,15 +1,32 @@
-This configs has not been added to repo
+Create automation/configs for everthing in here in install.sh
+Create a list for all apps, utility tools that is essential for development
 
-wezterm
-not using it yet, instead setup windows terminal
+1-Terminal Emulator
+Wezterm or Windows Terminal
+Add font(nerd font most of the time)
+Add colorscheme, change opacity
 
-oh-my-posh(installed on wsl)
-tokyonight theme
+2-Tmux
+Install and configure
 
-windows terminal 
-tokyonight theme
-nerd font
-95 opacity
+3-Bash or Zsh
+Install and configure
+Setup aliases
 
-tmux
-add cloned tpm repo, there is info about this at github page
+4-Git
+Install and configure
+Add a gitignore
+Write custom aliases.
+
+5-Neovim
+Install and configure
+
+6-Linter, Formatter
+Install and configure related linters, formatters
+Prettier, eslint, black, isort etc. 
+These can be installed in neovim with mason tool installer.
+
+7-Ssh
+Setup trusted hosts and alias for remotes
+
+8-Oh my posh
