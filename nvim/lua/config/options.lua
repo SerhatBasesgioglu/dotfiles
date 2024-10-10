@@ -53,14 +53,14 @@ vim.opt.showmode = false
 vim.opt.swapfile = false
 
 -- Keeps cursor in the middle of screen (10 means at least 10 lines away from the borders)
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 10
 
-
+-- Better indenting i guess
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.breakindent = true
 
 -- Other settings that i've copied, look their functionalities
--- opm.autoindent = true
--- opt.smartindent = true
--- opt.breakindent = true
 -- opt.signcolumn = "yes"
 -- opt.updatetime = 250
 -- opt.timeoutlen = 300
