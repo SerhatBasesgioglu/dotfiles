@@ -27,3 +27,5 @@ gitsigns = adds git commands
 lazygit = gitrelated again, look
 nvim-ufo = adds better folding
 vim-tmux-navigator = makes movement between nvim and tmux panes easier
+
+update this page
