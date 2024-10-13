@@ -36,7 +36,7 @@ return {
 		vim.keymap.set("n", "<leader>ll", function()
 			toggle_linter_diagnostics()
 		end, { desc = "Toggle linter diagnostics" })
-		vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
+		vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "TextChanged" }, {
 			callback = function()
 				if lint_enabled then
 					lint.try_lint() -- Only run lint if diagnostics are toggled on
