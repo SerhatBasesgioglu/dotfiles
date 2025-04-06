@@ -22,7 +22,6 @@ require("lazy").setup({
 		{ import = "plugins/git" },
 		{ import = "plugins/lsp" },
 		{ import = "plugins/nav" },
-		{ import = "plugins/parser" },
 		{ import = "plugins/theme" },
 		{ import = "plugins/ui" },
 	},
