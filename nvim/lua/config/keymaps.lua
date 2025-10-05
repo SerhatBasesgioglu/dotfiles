@@ -19,14 +19,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 --vim.keymap.set("n", "<A-j>", "<cmd>resize +2<CR>", { desc = "Move split to left" })
 --vim.keymap.set("n", "<A-k>", "<cmd>resize -2<CR>", { desc = "Move split to left" })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
-
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })

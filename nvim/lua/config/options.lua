@@ -7,9 +7,6 @@ vim.opt.relativenumber = true
 -- Enable mouse
 vim.opt.mouse = "a"
 
--- Use system clipboard
-vim.opt.clipboard = "unnamedplus"
-
 -- Create new splits on right or below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -18,9 +15,9 @@ vim.opt.splitright = true
 vim.opt.cursorline = true
 
 -- Make tabsize 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Turn tabs into spaces
 vim.opt.expandtab = true
@@ -53,7 +50,7 @@ vim.opt.showmode = false
 vim.opt.swapfile = false
 
 -- Keeps cursor in the middle of screen (10 means at least 10 lines away from the borders)
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 99
 
 -- Better indenting i guess
 vim.opt.autoindent = true
@@ -68,3 +65,6 @@ vim.opt.breakindent = true
 -- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- opt.inccommand = "split"
 -- opt.background = "dark"
+
+-- Use system clipboard
+--vim.opt.clipboard = "unnamedplus"
