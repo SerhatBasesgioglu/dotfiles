@@ -32,7 +32,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Make longer lines to overflow instead of wrapping to nextline
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- Enable persistent undo, can undo to older changes than file opening
 vim.opt.undofile = true
