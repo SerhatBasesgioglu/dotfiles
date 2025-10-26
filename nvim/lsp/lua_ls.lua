@@ -23,6 +23,15 @@ return {
 			diagnostics = {
 				globals = { "vim" },
 			},
+			workspace = {
+				library = {
+					"$VIMRUNTIME",
+					"deps/nvim-test",
+					"${3rd}/busted/library",
+					"${3rd}/luassert/library",
+          vim.fn.stdpath("data") .. "/lazy/snacks.nvim/lua"
+				},
+			},
 		},
 	},
 }

@@ -16,6 +16,7 @@ return {
 				"query",
 				"markdown",
 				"markdown_inline",
+				"hcl",
 			},
 			sync_install = false,
 			ignore_install = {},
