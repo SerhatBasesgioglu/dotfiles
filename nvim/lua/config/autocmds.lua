@@ -11,9 +11,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		local opts = { buffer = ev.buf, silent = true }
 
-		opts.desc = "Show LSP references"
-		vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-
 		opts.desc = "See available code actions"
 		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 

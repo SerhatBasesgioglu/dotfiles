@@ -17,6 +17,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"hcl",
+        "powershell"
 			},
 			sync_install = false,
 			ignore_install = {},
