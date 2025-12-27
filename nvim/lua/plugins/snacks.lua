@@ -16,6 +16,7 @@ return {
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		terminal = { enabled = false },
 	},
 keys = {
     -- Top Pickers & Explorer

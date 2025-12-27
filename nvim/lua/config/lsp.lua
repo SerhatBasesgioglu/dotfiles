@@ -1,8 +1,8 @@
 vim.lsp.enable({
 	"lua_ls",
-  "powershell"
+  "pyright",
+  "angular"
 })
---"roslyn",
 
 vim.diagnostic.config({
 	virtual_lines = true,

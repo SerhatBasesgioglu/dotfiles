@@ -1,20 +1,19 @@
 return {
 	cmd = {
-		"OmniSharp",
+		"pyright-langserver",
+    "--stdio"
 	},
-	filetypes = { "cs", "csproj" },
+	filetypes = { "python" },
 	root_markers = {
 		".git",
-		".sln",
-		".csproj",
-		"omnisharp.json",
 	},
-
 	single_file_support = true,
 	log_level = vim.lsp.protocol.MessageType.Warning,
+
 	settings = {
-		omnisharp = {
-			enable_import_completion = true,
-		},
+    python = {
+      pythonPath = "/home/serhat/repos/rag/env/bin/python"
+    }
 	},
 }
+

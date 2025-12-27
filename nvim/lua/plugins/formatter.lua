@@ -15,6 +15,8 @@ return {
 				markdown = { "prettier" },
 				lua = { "stylua" },
 				cs = { "csharpier" },
+        python = { "black"},
+        sh = {"shfmt"}
 			},
 			format_on_save = {
 				lsp_fallback = true,

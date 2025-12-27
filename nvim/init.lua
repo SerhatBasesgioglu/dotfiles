@@ -4,4 +4,4 @@ require("config.lazy")
 require("config.lsp")
 require("config.autocmds")
 
-require("notorious").setup()
+--require("notorious").setup()
