@@ -1,12 +1,15 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPre", "BufNewFile" },
+  lazy = false,
 	build = ":TSUpdate",
+
 	config = function()
-		require("nvim-treesitter.configs").setup({
+    local configs = require("nvim-treesitter")
+		configs.setup({
 			auto_install = true,
 			ensure_installed = {
 				"c",
+        "c_sharp",
 				"lua",
 				"html",
 				"javascript",

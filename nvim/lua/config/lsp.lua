@@ -1,7 +1,8 @@
 vim.lsp.enable({
 	"lua_ls",
   "pyright",
-  "angular"
+  "angular",
+  "roslyn"
 })
 
 vim.diagnostic.config({

@@ -9,7 +9,6 @@ return {
 
 		config = function()
 			local lspconfig = require("lspconfig")
-			local mason_lspconfig = require("mason-lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -65,33 +64,6 @@ return {
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
 
-			mason_lspconfig.setup_handlers({
-				function(server_name)
-					if server_name == "ts_ls" then
-						lspconfig.ts_ls.setup({
-							capabilities = capabilities,
-							settings = {
-								javascript = {
-									preferences = {
-										importModuleSpecifierEnding = "minimal",
-										importModuleSpecifier = "relative",
-									},
-								},
-								typescript = {
-									preferences = {
-										importModuleSpecifierEnding = "minimal",
-										importModuleSpecifier = "relative",
-									},
-								},
-							},
-						})
-					else
-						lspconfig[server_name].setup({
-							capabilities = capabilities,
-						})
-					end
-				end,
-			})
 		end,
 	},
 }
