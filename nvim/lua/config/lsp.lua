@@ -1,10 +1,14 @@
 vim.lsp.enable({
-	"lua_ls",
+  "lua_ls",
   "pyright",
   "angular",
-  "roslyn"
+  "roslyn",
+  "bashls",
+  "ts_ls",
+  "angular_ls",
 })
+--"sqlls",
 
 vim.diagnostic.config({
-	virtual_lines = true,
+  virtual_lines = true,
 })

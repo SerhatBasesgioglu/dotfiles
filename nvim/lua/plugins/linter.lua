@@ -9,6 +9,7 @@ return {
       typescript = { "eslint_d" },
       html = { "htmlhint" },
       lua = { "selene" },
+      json = { "jsonlint" },
     }
 
     local lint_enabled = false
