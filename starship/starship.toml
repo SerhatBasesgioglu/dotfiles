@@ -1,0 +1,67 @@
+format = """
+[](#9A348E)\
+$os\
+$username\
+$hostname\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$cuda\
+$docker_context\
+[](fg:#86BBD8 bg:#06969A)\
+$time\
+[](fg:#06969A)\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bg:#9A348E fg:#FFFFFF"
+
+[username]
+show_always = true
+style_user = "bg:#9A348E fg:#FFFFFF"
+style_root = "bg:#9A348E fg:#FFFFFF"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "bg:#9A348E fg:#FFFFFF"
+format = "@[$hostname]($style)"
+
+[directory]
+style = "bg:#DA627D fg:#FFFFFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#FCA17D fg:#FFFFFF"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:#FCA17D fg:#FFFFFF"
+format = '[$all_status$ahead_behind]($style)'
+
+[nodejs]
+format = "via [⬢ $version](bold green)"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bg:#06969A fg:#FFFFFF"
+format = "[ $time ]($style)"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[cmd_duration]
+show_milliseconds = false
+min_time = 2000
+style = "fg:#8B0000"
