@@ -10,6 +10,7 @@ return {
       html = { "htmlhint" },
       lua = { "selene" },
       json = { "jsonlint" },
+      python = { "ruff", "mypy" },
     }
 
     local lint_enabled = false

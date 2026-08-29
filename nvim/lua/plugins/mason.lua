@@ -18,6 +18,8 @@ return {
 					-- Formatters
 					"prettier",
 					"stylua",
+					"ruff",
+					"mypy",
 					-- Linters
 					"eslint_d",
 					"selene",

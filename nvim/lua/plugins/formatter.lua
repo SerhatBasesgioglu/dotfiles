@@ -15,7 +15,7 @@ return {
         markdown = { "prettier" },
         lua = { "stylua" },
         cs = { "csharpier" },
-        python = { "black" },
+        python = { "ruff_format" },
         sh = { "shfmt" },
       },
       formatters = {
