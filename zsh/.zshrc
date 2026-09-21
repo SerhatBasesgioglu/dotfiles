@@ -44,7 +44,12 @@ oc() {
   local target first origin_pane opencode_cmd
   local -a oc_args
 
-  if [[ $# -gt 0 && "$1" != -* ]]; then
+  (( $# )) || {
+    command opencode
+    return
+  }
+
+  if [[ "$1" != -* ]]; then
     first="$1"
     if [[ -d "$first" ]]; then
       target="$first"
