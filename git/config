@@ -10,3 +10,9 @@
 [core] # Default code editor for commits
 	editor = nvim
 
+[credential]
+	helper = store
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true

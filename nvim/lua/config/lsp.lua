@@ -1,11 +1,10 @@
 vim.lsp.enable({
   "lua_ls",
   "pyright",
-  "angular",
+  "angularls",
   "roslyn",
   "bashls",
   "ts_ls",
-  "angular_ls",
 })
 --"sqlls",
 
