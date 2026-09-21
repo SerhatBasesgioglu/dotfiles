@@ -8,17 +8,19 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-source ~/.zsh_aliases
+[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
 
 setopt PROMPT_CR
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
 
 dev() {
   "$HOME/repos/devcontainer/run.sh" "$@"
 }
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/vb41454/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 export PATH="/opt/homebrew/bin:$PATH"
@@ -32,7 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Corporate MITM proxy CA trust (vakifbank)
-export NODE_EXTRA_CA_CERTS="$HOME/.vakif-ca-bundle.pem"
+if [[ -f "$HOME/.vakif-ca-bundle.pem" ]]; then
+  export NODE_EXTRA_CA_CERTS="$HOME/.vakif-ca-bundle.pem"
+fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -100,7 +104,7 @@ compdef _oc oc
 
 oct() {
   local tmpdir
-  tmpdir="$(mktemp -d /tmp/oc-XXXXXX)"
+  tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/oc-XXXXXX")"
   if tmux has-session 2>/dev/null; then
     tmux split-window -h -c "$tmpdir" "nvim"
     tmux select-pane -t 0
@@ -113,4 +117,4 @@ oct() {
 }
 
 # opencode
-export PATH=/Users/vb41454/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"

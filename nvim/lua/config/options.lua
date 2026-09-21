@@ -37,6 +37,9 @@ vim.opt.wrap = false
 -- Enable persistent undo, can undo to older changes than file opening
 vim.opt.undofile = true
 
+-- Preserve local options such as filetype when restoring sessions.
+vim.opt.sessionoptions:append("localoptions")
+
 -- Enable folding based on syntax, might need plugin for this.
 vim.opt.foldmethod = "syntax"
 

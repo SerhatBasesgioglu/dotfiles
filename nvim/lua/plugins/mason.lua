@@ -45,15 +45,22 @@ return {
 						"angularls",
 						"netcoredbg",
 						"debugpy",
+						"roslyn",
+						"html-lsp",
+						"tree-sitter-cli",
 
 					-- Formatters
 					"prettier",
 					"stylua",
 					"ruff",
 					"mypy",
+					"shfmt",
+					"csharpier",
 					-- Linters
 					"eslint_d",
 					"selene",
+					"htmlhint",
+					"jsonlint",
 				},
 				run_on_start = true,
 			})

@@ -10,26 +10,32 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-info()  { printf "${GREEN}✓ %s${NC}\n" "$1"; }
-warn()  { printf "${YELLOW}⚠ %s${NC}\n" "$1"; }
-error() { printf "${RED}✗ %s${NC}\n" "$1"; }
-step()  { printf "\n${BLUE}▸ %s${NC}\n" "$1"; }
+info()  { printf '%b✓ %s%b\n' "$GREEN" "$1" "$NC"; }
+warn()  { printf '%b⚠ %s%b\n' "$YELLOW" "$1" "$NC"; }
+error() { printf '%b✗ %s%b\n' "$RED" "$1" "$NC"; }
+step()  { printf '\n%b▸ %s%b\n' "$BLUE" "$1" "$NC"; }
 
 OS="$(uname -s)"
 ARCH="$(uname -m)"
 
+if ! command -v git &>/dev/null; then
+  error "git is required to install these dotfiles"
+  exit 1
+fi
+
 link_file() {
   local src="$1" dst="$2"
   if [ -e "$dst" ] || [ -L "$dst" ]; then
-    local current
+    local current relative
     current=$(readlink "$dst" 2>/dev/null || echo "")
     if [ "$current" = "$src" ]; then
       info "Already linked: $dst"
       return
     fi
     warn "Backing up: $dst → $BACKUP_DIR/"
-    mkdir -p "$BACKUP_DIR/$(dirname "$dst")"
-    mv "$dst" "$BACKUP_DIR/$dst"
+    relative="${dst#"$HOME"/}"
+    mkdir -p "$BACKUP_DIR/$(dirname "$relative")"
+    mv -- "$dst" "$BACKUP_DIR/$relative"
   fi
   ln -sfn "$src" "$dst"
   info "Linked: $dst → $src"
@@ -95,6 +101,9 @@ if [ "$OS" = "Darwin" ]; then
     jq
     gh
     starship
+    tree-sitter
+    shellcheck
+    shfmt
   )
 
   BREW_CASKS=(
@@ -132,7 +141,8 @@ fi
 step "Tmux plugins"
 
 TPM_DIR="$HOME/.config/tmux/plugins/tpm"
-if [ ! -d "$TPM_DIR" ]; then
+mkdir -p "$(dirname "$TPM_DIR")"
+if [ ! -x "$TPM_DIR/tpm" ]; then
   git clone --depth=1 https://github.com/tmux-plugins/tpm "$TPM_DIR"
   info "TPM cloned"
 else
@@ -140,8 +150,11 @@ else
 fi
 
 # Install TPM plugins headlessly
-"$TPM_DIR/bin/install_plugins" &>/dev/null || true
-info "Tmux plugins installed"
+if "$TPM_DIR/bin/install_plugins" &>/dev/null; then
+  info "Tmux plugins installed"
+else
+  warn "Tmux plugin installation failed; run $TPM_DIR/bin/install_plugins manually"
+fi
 
 # ──────────────────────────────────────────────
 # 4. macOS settings
@@ -164,8 +177,8 @@ fi
 # ──────────────────────────────────────────────
 # Done
 # ──────────────────────────────────────────────
-printf "\n${GREEN}✔ All done!${NC}\n"
+printf '\n%b✔ All done!%b\n' "$GREEN" "$NC"
 if [ -d "$BACKUP_DIR" ]; then
   warn "Backups saved to: $BACKUP_DIR"
 fi
-echo "Restart your shell or run: source ~/.bashrc"
+echo "Restart your shell to load the new configuration."

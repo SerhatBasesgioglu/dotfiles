@@ -44,14 +44,17 @@ dev() {
 #export no_proxy="local,localhost,vakifbank.intra,vakif.extra,vakifbank.com.tr,svc,127.0.0.1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
 #export NO_PROXY="local,localhost,vakifbank.intra,vakif.extra,vakifbank.com.tr,svc,127.0.0.1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
 
-export NODE_TLS_REJECT_UNAUTHORIZED=0
+if [[ -f "$HOME/.vakif-ca-bundle.pem" ]]; then
+  export NODE_EXTRA_CA_CERTS="$HOME/.vakif-ca-bundle.pem"
+fi
 
-PATH="/opt/node/bin:/var/lib/rancher/rke2/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.opencode/bin:/opt/node/bin:/var/lib/rancher/rke2/bin:$PATH"
 
 # Load Angular CLI autocompletion.
 #source <(ng completion script)
 
 alias k=kubectl
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
-
+if command -v kubectl &>/dev/null; then
+  source <(kubectl completion bash)
+  complete -o default -F __start_kubectl k
+fi

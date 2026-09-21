@@ -187,8 +187,14 @@ return {
 
 			dap.adapters.python = {
 				type = "executable",
-				command = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python",
-				args = { "-m", "debugpy.adapter" },
+				command = (function()
+					local adapter = vim.fn.exepath("debugpy-adapter")
+					if adapter ~= "" then
+						return adapter
+					end
+					return vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
+				end)(),
+				args = vim.fn.exepath("debugpy-adapter") ~= "" and {} or { "-m", "debugpy.adapter" },
 			}
 
 			dap.configurations.cs = {
