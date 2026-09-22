@@ -48,20 +48,18 @@ step "Symlinking configs"
 
 mkdir -p "$HOME/.config"
 
-for dir in kitty nvim git tmux starship; do
+for dir in kitty nvim git tmux; do
   if [ -d "$DOTFILES_DIR/$dir" ]; then
     link_file "$DOTFILES_DIR/$dir" "$HOME/.config/$dir"
   fi
 done
 
-# OpenCode keeps runtime state and installed packages beside its configuration,
-# so link only the stable files managed by this repository.
-mkdir -p "$HOME/.config/opencode"
-if [ -f "$DOTFILES_DIR/opencode/cli.json" ]; then
-  link_file "$DOTFILES_DIR/opencode/cli.json" "$HOME/.config/opencode/cli.json"
+if [ -f "$DOTFILES_DIR/starship/starship.toml" ]; then
+  link_file "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 fi
-if [ -d "$DOTFILES_DIR/opencode/commands" ]; then
-  link_file "$DOTFILES_DIR/opencode/commands" "$HOME/.config/opencode/commands"
+
+if [ -d "$DOTFILES_DIR/opencode" ]; then
+  link_file "$DOTFILES_DIR/opencode" "$HOME/.config/opencode"
 fi
 
 if [ -f "$DOTFILES_DIR/bash/bash_aliases" ]; then

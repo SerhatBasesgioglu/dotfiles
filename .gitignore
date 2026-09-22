@@ -1,0 +1,23 @@
+# OpenCode installed/generated dependencies
+/opencode/node_modules/
+/opencode/package.json
+/opencode/package-lock.json
+/opencode/npm-shrinkwrap.json
+/opencode/bun.lock
+/opencode/bun.lockb
+
+# OpenCode generated plugin metadata
+/opencode/.oh-my-opencode-slim/
+
+# OpenCode machine-local runtime and credentials
+/opencode/service.json
+/opencode/log/
+/opencode/logs/
+/opencode/tmp/
+/opencode/state/
+/opencode/cache/
+/opencode/.cache/
+
+# Local backups and OS metadata
+/opencode/*.bak
+.DS_Store

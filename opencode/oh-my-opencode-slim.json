@@ -1,0 +1,166 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@2.2.22/oh-my-opencode-slim.schema.json",
+  "preset": "sol-luna",
+  "presets": {
+    "sol-luna": {
+      "orchestrator": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "9router/luna",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "sol-qwen": {
+      "orchestrator": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "9router/sol",
+        "variant": "high",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "9router/qwen35",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "qwen": {
+      "orchestrator": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "9router/qwen35",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "9router/qwen35",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "autoUpdate": false,
+  "backgroundJobs": {
+    "wallClockTimeoutMs": 900000,
+    "concurrency": {
+      "defaultConcurrency": 4,
+      "providerConcurrency": {
+        "9router": 4
+      },
+      "modelConcurrency": {
+        "9router/qwen35": 4,
+        "9router/terra": 2,
+        "9router/codex": 2,
+        "9router/sol": 1
+      }
+    }
+  }
+}

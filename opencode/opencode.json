@@ -1,0 +1,208 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "9router/terra",
+  "default_agent": "orchestrator",
+  "experimental": {
+    "subagent_depth": 2
+  },
+  "permissions": [
+    { "action": "external_directory", "resource": "~/repos/agent-workspace/*", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl version *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl cluster-info *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl config current-context *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl config get-contexts *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl api-resources *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl api-versions *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl auth can-i *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl get *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl describe *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl logs *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl top *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl events *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl explain *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * get *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * describe *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * logs *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * top *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * events *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl * explain *", "effect": "allow" },
+    { "action": "shell", "resource": "kubectl apply *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * apply *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl create *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * create *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl delete *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * delete *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl edit *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * edit *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl exec *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * exec *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl patch *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * patch *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl replace *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * replace *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl rollout *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * rollout *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl scale *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * scale *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl set *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * set *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl cp *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * cp *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl debug *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * debug *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl port-forward *", "effect": "ask" },
+    { "action": "shell", "resource": "kubectl * port-forward *", "effect": "ask" },
+    { "action": "shell", "resource": "helm *", "effect": "ask" },
+    { "action": "shell", "resource": "helm list *", "effect": "allow" },
+    { "action": "shell", "resource": "helm status *", "effect": "allow" },
+    { "action": "shell", "resource": "helm history *", "effect": "allow" },
+    { "action": "shell", "resource": "helm get *", "effect": "allow" },
+    { "action": "shell", "resource": "helm * list *", "effect": "allow" },
+    { "action": "shell", "resource": "helm * status *", "effect": "allow" },
+    { "action": "shell", "resource": "helm * history *", "effect": "allow" },
+    { "action": "shell", "resource": "helm * get *", "effect": "allow" },
+    { "action": "shell", "resource": "helm install *", "effect": "ask" },
+    { "action": "shell", "resource": "helm * install *", "effect": "ask" },
+    { "action": "shell", "resource": "helm upgrade *", "effect": "ask" },
+    { "action": "shell", "resource": "helm * upgrade *", "effect": "ask" },
+    { "action": "shell", "resource": "helm rollback *", "effect": "ask" },
+    { "action": "shell", "resource": "helm * rollback *", "effect": "ask" },
+    { "action": "shell", "resource": "helm uninstall *", "effect": "ask" },
+    { "action": "shell", "resource": "helm * uninstall *", "effect": "ask" },
+    { "action": "shell", "resource": "helm test *", "effect": "ask" },
+    { "action": "shell", "resource": "helm * test *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd app list *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app get *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app history *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app logs *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app manifests *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app diff *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd cluster list *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd repo list *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd proj list *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd proj get *", "effect": "allow" },
+    { "action": "shell", "resource": "argocd app sync *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd app rollback *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd app set *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd app terminate-op *", "effect": "ask" },
+    { "action": "shell", "resource": "argocd app actions run *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines list *", "effect": "allow" },
+    { "action": "shell", "resource": "az pipelines show *", "effect": "allow" },
+    { "action": "shell", "resource": "az pipelines runs list *", "effect": "allow" },
+    { "action": "shell", "resource": "az pipelines runs show *", "effect": "allow" },
+    { "action": "shell", "resource": "az * pipelines list *", "effect": "allow" },
+    { "action": "shell", "resource": "az * pipelines show *", "effect": "allow" },
+    { "action": "shell", "resource": "az * pipelines runs list *", "effect": "allow" },
+    { "action": "shell", "resource": "az * pipelines runs show *", "effect": "allow" },
+    { "action": "shell", "resource": "az pipelines run *", "effect": "ask" },
+    { "action": "shell", "resource": "az * pipelines run *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines runs cancel *", "effect": "ask" },
+    { "action": "shell", "resource": "az * pipelines runs cancel *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines variable create *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines variable update *", "effect": "ask" },
+    { "action": "shell", "resource": "az pipelines variable delete *", "effect": "ask" }
+  ],
+  "providers": {
+    "9router": {
+      "name": "9router",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://localhost:20128/v1"
+      },
+      "models": {
+        "sol": {
+          "modelID": "cx/gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "variants": [
+            { "id": "none", "settings": { "reasoningEffort": "none" } },
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "terra": {
+          "modelID": "cx/gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "variants": [
+            { "id": "none", "settings": { "reasoningEffort": "none" } },
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "luna": {
+          "modelID": "cx/gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "variants": [
+            { "id": "none", "settings": { "reasoningEffort": "none" } },
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } },
+            { "id": "max", "settings": { "reasoningEffort": "max" } }
+          ]
+        },
+        "codex": {
+          "modelID": "gh/gpt-5.3-codex",
+          "name": "GPT-5.3 Codex",
+          "variants": [
+            { "id": "none", "settings": { "reasoningEffort": "none" } },
+            { "id": "minimal", "settings": { "reasoningEffort": "minimal" } },
+            { "id": "low", "settings": { "reasoningEffort": "low" } },
+            { "id": "medium", "settings": { "reasoningEffort": "medium" } },
+            { "id": "high", "settings": { "reasoningEffort": "high" } },
+            { "id": "xhigh", "settings": { "reasoningEffort": "xhigh" } }
+          ]
+        },
+        "qwen35": {
+          "modelID": "vakif/qwen35",
+          "name": "Qwen 3.5 122B",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              },
+              "body": {
+                "chat_template_kwargs": {
+                  "enable_thinking": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "plugins": [
+    "./plugins/ops-brain-v2",
+    "./plugins/subagent-schema-fix"
+  ],
+  "plugin": [
+    "oh-my-opencode-slim@2.2.22"
+  ],
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "lsp": true
+}

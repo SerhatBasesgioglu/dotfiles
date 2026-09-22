@@ -18,6 +18,21 @@ DOTFILES_DIR="$PWD" ./install.sh
 
 Existing configuration is moved to a timestamped `~/.dotfiles-backup-*` directory before links are created.
 
+Managed links:
+
+| Source | Destination |
+| --- | --- |
+| `kitty/` | `~/.config/kitty` |
+| `nvim/` | `~/.config/nvim` |
+| `git/` | `~/.config/git` |
+| `tmux/` | `~/.config/tmux` |
+| `starship/starship.toml` | `~/.config/starship.toml` |
+| `opencode/` | `~/.config/opencode` |
+| `bash/bash_aliases` | `~/.bash_aliases` |
+| `bash/.bashrc` | `~/.bashrc` |
+| `zsh/zsh_aliases` | `~/.zsh_aliases` |
+| `zsh/.zshrc` | `~/.zshrc` |
+
 On macOS, the installer uses Homebrew to install the configured applications and command-line tools. On Linux, install the prerequisites with the system package manager first. Important commands include `git`, `nvim`, `tmux`, `rg`, `fd`, `fzf`, `lazygit`, `jq`, `starship`, `tree-sitter`, `shellcheck`, and `shfmt`.
 
 ## Tmux plugins
@@ -44,7 +59,7 @@ Some language tooling, such as the .NET SDK and project-specific runtimes, must 
 
 ## OpenCode
 
-The installer links `opencode/cli.json` and `opencode/commands/` individually. OpenCode's runtime files, service registration, installed packages, and credentials remain local under `~/.config/opencode` and are not tracked.
+The installer links the complete `opencode/` directory to `~/.config/opencode`. OpenCode can create generated dependencies and runtime files through that link; repository-root `.gitignore` keeps those machine-local artifacts untracked.
 
 ## Validation
 
