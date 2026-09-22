@@ -54,6 +54,16 @@ for dir in kitty nvim git tmux starship; do
   fi
 done
 
+# OpenCode keeps runtime state and installed packages beside its configuration,
+# so link only the stable files managed by this repository.
+mkdir -p "$HOME/.config/opencode"
+if [ -f "$DOTFILES_DIR/opencode/cli.json" ]; then
+  link_file "$DOTFILES_DIR/opencode/cli.json" "$HOME/.config/opencode/cli.json"
+fi
+if [ -d "$DOTFILES_DIR/opencode/commands" ]; then
+  link_file "$DOTFILES_DIR/opencode/commands" "$HOME/.config/opencode/commands"
+fi
+
 if [ -f "$DOTFILES_DIR/bash/bash_aliases" ]; then
   link_file "$DOTFILES_DIR/bash/bash_aliases" "$HOME/.bash_aliases"
 fi

@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal configuration for Bash, Zsh, Git, Kitty, Neovim, Starship, and tmux.
+Personal configuration for Bash, Zsh, Git, Kitty, Neovim, OpenCode, Starship, and tmux.
 
 ## Installation
 
@@ -41,6 +41,10 @@ nvim '+checkhealth'
 ```
 
 Some language tooling, such as the .NET SDK and project-specific runtimes, must still be installed separately.
+
+## OpenCode
+
+The installer links `opencode/cli.json` and `opencode/commands/` individually. OpenCode's runtime files, service registration, installed packages, and credentials remain local under `~/.config/opencode` and are not tracked.
 
 ## Validation
 
