@@ -48,7 +48,7 @@ step "Symlinking configs"
 
 mkdir -p "$HOME/.config"
 
-for dir in kitty nvim git tmux; do
+for dir in kitty nvim git tmux aerospace; do
   if [ -d "$DOTFILES_DIR/$dir" ]; then
     link_file "$DOTFILES_DIR/$dir" "$HOME/.config/$dir"
   fi
@@ -116,6 +116,7 @@ if [ "$OS" = "Darwin" ]; then
 
   BREW_CASKS=(
     kitty
+    aerospace
     font-jetbrains-mono-nerd-font
   )
 
